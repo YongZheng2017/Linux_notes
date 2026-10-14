@@ -29,4 +29,25 @@ b.环境变量
         $?  引用前一个命令的执行状态返回值
     d.位置变量
 
+&nbsp;
+
+声明变量： 
+declare  变量名
+-i  声明为整型
+-a  声明为数组
+-r  声明变量为只读变量
+-x  声明为环境变量
+declare -i age=23 
+
+&nbsp;
+
+引用变量值
+${VARNAME}    // 花括号可省略
+
+```
+test@123456789:~$ unset animal
+test@123456789:~$ echo "There are some ${animal}s"
+    There are some s
+```
+
 
