@@ -50,4 +50,33 @@ test@123456789:~$ echo "There are some ${animal}s"
     There are some s
 ```
 
+&nbsp;
 
+撤销变量
+unset 变量名    // 不要加$
+
+```
+test@123456789:~$ unset animal
+test@123456789:~$ echo "There are some ${animal}s"
+    There are some s
+```
+
+&nbsp;
+
+只读变量（常量）
+readonly VARNAME    // 不可撤销
+
+```
+test@123456789:~$ readonly animal="pig"
+test@123456789:~$ echo "There are some ${animal}s"
+    There are some pigs
+test@123456789:~$ unset animal
+-bash: unset: animal: cannot unset: readonly variable
+```
+
+&nbsp;
+
+变量名：
+只能包含数字、字母、下划线
+环境变量都是大写
+本地变量不建议用大写，且不要与环境变量同名
