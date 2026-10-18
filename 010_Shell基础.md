@@ -136,7 +136,40 @@ test@123456789:~$ echo $age
 2. $()
 
 ```
+test@123456789:~$ echo "today is `date +%F`"
+    today is 2026-07-21
+test@123456789:~$ echo "today is $(date +%F)"
+    today is 2026-07-21
 
+touch file_`date +%F-%H-%M-%S`
 ```
 
+&nbsp;
 
+## seq
+
+生成序列数
+
+Usage: seq [OPTION]... LAST
+
+or: seq [OPTION]... FIRST LAST
+
+or: seq [OPTION]... FIRST INCREMENT LAST
+
+Print numbers from FIRST to LAST, in steps of INCREMENT.
+
+seq 5 // 1,2,3,4,5
+
+seq 5 10 // [5~10]
+
+seq 10 2 100 // [10, 100]的偶数
+
+&nbsp;
+
+## shell脚本
+
+命令的堆砌
+
+开头 shebang： #!/bin/bash // 指定用bash执行，魔数，让linux识别文件类型
+
+井号 xxx // 注释行，不会执行
