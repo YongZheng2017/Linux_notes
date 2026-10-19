@@ -259,3 +259,21 @@ set -c：禁止覆盖已存在的普通文件（通过重定向输出时，如 >
 set +c：取消这个禁止覆盖的限制，允许重定向覆盖已存在的文件
 
 command >| file // 强制覆盖
+
+&nbsp;
+
+## 管道
+
+前一个命令的输出 当做 第二个命令的输入
+
+只传递标准输出
+
+command1 | command2 | command3
+
+&nbsp;
+
+有些场景不适用管道： file `ls /var/log`
+
+file ls /var/log | cut -d: -f2 | tr -d ' ' // 用file取每个文件的文件类型； 按冒号分隔，取第2个字段； 删除空白字符
+
+file `ls /var/log` | cut -d: -f2 | tr -d ' ' | sort | uniq // 再排序； 再去重
