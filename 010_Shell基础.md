@@ -173,3 +173,89 @@ seq 10 2 100 // [10, 100]的偶数
 开头 shebang： #!/bin/bash // 指定用bash执行，魔数，让linux识别文件类型
 
 井号 xxx // 注释行，不会执行
+
+&nbsp;
+
+## 重定向
+
+标准输入：0 stdin
+
+标准输出：1 stdout
+
+标准错误输出：2 stderr
+
+&nbsp;
+
+输出重定向
+
+command > file 覆盖输出
+
+command >> file 追加输出
+
+&nbsp;
+
+输入重定向
+
+tr 'a-z' 'A-Z' < /etc/passwd // 从 /etc/passwd 读入， 小写字母变大写
+
+command << "EOF" // 在脚本中用来生成文档，表示遇到 EOF 结束
+
+```
+test@123456789:~$ cat >> test.out << EOF
+> The first line
+> Thes second line
+> The third line
+> EOF
+
+test@123456789:~$ cat test.out
+The first line
+The second line
+The third line
+test@123456789:~$
+```
+
+```
+#!/bin/bash
+cat << EOF
+What do you want to eat?
+1, Shaoji
+2, Loongxia
+3, Dazhaxie
+EOF
+```
+
+&nbsp;
+
+标准错误输出重定向
+
+command 2> outfile
+
+command 2>> outfile // 追加
+
+&nbsp;
+
+标准输出和错误输出一起重定向
+
+command > outfile 2> &1
+
+command &> outfile // 和上面等价
+
+commande > outfile 2> errfile // 分开重定向
+
+&nbsp;
+
+/dev/null 丢弃的数据 date > /dev/null
+
+/dev/zero 持续吐0的泡泡机
+
+/dev/random 随机数生成器
+
+/dev/urandom 随机数生成器
+
+&nbsp;
+
+set -c：禁止覆盖已存在的普通文件（通过重定向输出时，如 > 和 >>）
+
+set +c：取消这个禁止覆盖的限制，允许重定向覆盖已存在的文件
+
+command >| file // 强制覆盖
