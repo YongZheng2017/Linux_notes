@@ -277,3 +277,11 @@ command1 | command2 | command3
 file ls /var/log | cut -d: -f2 | tr -d ' ' // 用file取每个文件的文件类型； 按冒号分隔，取第2个字段； 删除空白字符
 
 file `ls /var/log` | cut -d: -f2 | tr -d ' ' | sort | uniq // 再排序； 再去重
+
+&nbsp;
+
+## T命令
+
+tee  一个输入，2个输出
+command1 | tee file | command2      // 先输出到file, 再输出到command2
+ls /etc | tee test1.out | tr 'a-z' 'A-Z'    // 先输出到 test1.out  再转换为大小并输出到屏幕
