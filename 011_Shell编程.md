@@ -50,3 +50,26 @@ test@123456789:~$ echo $d
 &nbsp;
 
 bash只支持整数运算，会取整（省略小数）
+
+&nbsp;
+
+浮点运算：
+
+bc
+
+bc - An arbitrary precision calculator language
+
+scale=需要精确到的小数位数
+
+echo 'scale=3;3/2' | bc
+
+```
+test@123456789:~$ echo 'scale=3;3/2' | bc
+    1.500
+```
+
+计算当前时间到1970.1.1的天数：
+
+```
+
+```
