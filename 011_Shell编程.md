@@ -124,3 +124,15 @@ a&b
 -ge >=
 
 -le <=
+
+&nbsp;
+
+测试表达式
+
+test expression
+
+[ expression ]
+
+[[ expression ]]
+
+test 2 -eq 3
