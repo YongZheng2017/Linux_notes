@@ -136,3 +136,21 @@ test expression
 [[ expression ]]
 
 test 2 -eq 3
+
+&nbsp;
+
+字符串比较
+
+== 等于
+
+!=, <> 不等于
+
+\> 大于， 其他一样，前面需要用反斜杠
+
+-n "$A" 测试是否存在字符
+
+-z "$A" 测试是否不存在任何字符（为空）
+
+string1 == string2
+
+test "abc" == "abc"
