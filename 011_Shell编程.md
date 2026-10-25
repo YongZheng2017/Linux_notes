@@ -154,3 +154,17 @@ test 2 -eq 3
 string1 == string2
 
 test "abc" == "abc"
+
+&nbsp;
+
+文件测试
+
+test -e path // 测试文件是否存在
+
+test -f path // 是否一个普通文件
+
+test -d path // 是否一个目录
+
+test -l path // 是否一个链接
+
+test r/w/x path // 是否有读/写/执行权限
