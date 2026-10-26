@@ -168,3 +168,13 @@ test -d path // 是否一个目录
 test -l path // 是否一个链接
 
 test r/w/x path // 是否有读/写/执行权限
+
+&nbsp;
+
+组合条件
+
+! // 取反
+
+-a // 与
+
+-o // 或
